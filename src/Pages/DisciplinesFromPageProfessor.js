@@ -14,22 +14,26 @@ export default function DisciplinesFromPageProfessor() {
     });
   },[id]);
 
-    return(
-        <Main>
-            <Container>
-                <Logo>RepoProvas</Logo>
-                {allInfos.map((e,i)=>{
-                return(
-                  <EachDiscipline key={i}>
-                    <a href={e.examLink} target={"_blank"} rel="noreferrer">
-                        {e.name} - {e.category.name} - {e.discipline.name} - {e.professors.name}
-                    </a>
-                  </EachDiscipline>
-                )})}
-            </Container>
-        </Main>
-    )
+  return(
+    <Main>
+      <Container>
+          <Logo>RepoProvas</Logo>
+          {allInfos.length === 0 ? 
+          <p>Não há provas cadastradas! Se tiver alguma, não deixe de cadastra-la! ;)</p>
+          :
+          allInfos.map((e,i)=>{
+            return(
+              <EachDiscipline key={i}>
+                <a href={e.examLink} target={"_blank"} rel="noreferrer">
+                    {e.name} - {e.category.name} - {e.discipline.name} - {e.professors.name}
+                </a>
+              </EachDiscipline>
+            )})}
+      </Container>
+    </Main>
+  )
 }
+
 
 const Main = styled.main`
   width: 100vw;
