@@ -8,7 +8,7 @@ export default function MainPage(){
               <Logo>RepoProvas</Logo>
               <Search>
                   <Link to={"/professors"}>
-                      <button>Professos</button>
+                      <button>Professores</button>
                   </Link>
                   <Link to={"/disciplines"}>
                       <button>Disciplinas</button>
